@@ -128,7 +128,7 @@ spec:
       containers:
         - name: ...
         - name: nebula
-          image: buildsociety/nebula:v1.2.0
+          image: renehonig/nebula:v1.5.2
           securityContext:
             capabilities:
               add:
@@ -172,7 +172,7 @@ spec:
       containers:
         - name: ...
         - name: nebula
-          image: buildsociety/nebula:v1.2.0
+          image: renehonig/nebula:v1.5.2
           securityContext:
             privileged: true
           volumeMounts:
