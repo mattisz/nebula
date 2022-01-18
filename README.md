@@ -35,7 +35,7 @@ development and caution must be exercised when using them.
 | :----: | --- |
 | latest | Stable Nebula Releases |
 | edge | Latest Nebula Releases |
-| v1.2.0 | Nebula 1.2.0 Release |
+| v1.5.2 | Nebula 1.2.0 Release |
 
 ## Usage
 
@@ -55,6 +55,22 @@ docker run -td --cap-add=NET_ADMIN --device=/dev/net/tun -v /path/to/config:/con
 or as a privileged container:
 ```bash
 docker run -td --privileged -v /path/to/config:/config --name nebula renehonig/nebula:latest
+```
+
+using docker-compose
+```bash
+version: "3"
+  services:
+    nebula:
+        image: renehonig/nebula:latest
+        container_name: nebula
+        volumes:
+          - '/path/to/config:/config'
+        cap_add:
+          - NET_ADMIN
+        network_mode: "host"
+        devices:
+          - /dev/net/tun:/dev/net/tun
 ```
 
 User documentation for Nebula can be found at
