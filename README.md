@@ -1,10 +1,10 @@
 # nebula
 
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/renehonig/nebula/build?color=db422a&logoColor=FFFFFF&style=for-the-badge)
-![Docker Pulls](https://img.shields.io/docker/pulls/renehonig/nebula?color=db422a&logoColor=2a6bdb&style=for-the-badge)
-![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/renehonig/nebula?color=db422a&logoColor=2a6bdb&style=for-the-badge)
-![Docker Stars](https://img.shields.io/docker/stars/renehonig/nebula?color=db422a&logoColor=2a6bdb&style=for-the-badge)
-![Docker Image Version (latest by date)](https://img.shields.io/docker/v/renehonig/nebula?color=db422a&logoColor=2a6bdb&style=for-the-badge)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/renehonig/nebula/build.yml)
+![Docker Pulls](https://img.shields.io/docker/pulls/renehonig/nebula)
+![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/renehonig/nebula)
+![Docker Stars](https://img.shields.io/docker/stars/renehonig/nebula)
+![Docker Image Version (latest by date)](https://img.shields.io/docker/v/renehonig/nebula)
 
 [Nebula](https://github.com/slackhq/nebula) is a scalable overlay networking
 tool with a focus on performance, simplicity and security. It lets you
