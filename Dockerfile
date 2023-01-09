@@ -24,13 +24,13 @@ ARG VCS_REF
 ARG VERSION
 ARG TARGETPLATFORM
 
-LABEL maintainer="buildsociety" \
+LABEL maintainer="renehonig" \
       org.opencontainers.image.created=$BUILD_DATE \
-      org.opencontainers.image.url="https://github.com/buildsociety/nebula" \
-      org.opencontainers.image.source="https://github.com/buildsociety/nebula" \
+      org.opencontainers.image.url="https://github.com/renehonig/nebula" \
+      org.opencontainers.image.source="https://github.com/renehonig/nebula" \
       org.opencontainers.image.version=$VERSION \
       org.opencontainers.image.revision=$VCS_REF \
-      org.opencontainers.image.vendor="buildsociety" \
+      org.opencontainers.image.vendor="renehonig" \
       org.opencontainers.image.title="nebula" \
       org.opencontainers.image.description="Nebula is a scalable overlay networking tool with a focus on performance, simplicity and security from Slack" \
       org.opencontainers.image.licenses="MIT"
