@@ -33,17 +33,17 @@ jobs:
           TAGS="${DOCKER_IMAGE}:${VERSION}"
           TAGS="$TAGS,${DOCKER_IMAGE}:latest"
 
-          echo {docker_username}=${DOCKER_USERNAME} >> $GITHUB_OUTPUT
-          echo {docker_image}=${DOCKER_IMAGE} >> $GITHUB_OUTPUT
-          echo {version}=${VERSION} >> $GITHUB_OUTPUT
-          echo {docker_platforms}=${DOCKER_PLATFORMS} >> $GITHUB_OUTPUT
+          echo docker_username=${DOCKER_USERNAME} >> $GITHUB_OUTPUT
+          echo docker_image=${DOCKER_IMAGE} >> $GITHUB_OUTPUT
+          echo version=${VERSION} >> $GITHUB_OUTPUT
+          echo docker_platforms=${DOCKER_PLATFORMS} >> $GITHUB_OUTPUT
           BUILDX_ARGS=$( \
             echo VERSION=${VERSION}; \
             echo BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ'); \
             echo VCS_REF=${GITHUB_SHA::8})
           BUILDX_ARGS="${BUILDX_ARGS//$'\n'/'%0A'}"
-          echo {buildx_args}=${BUILDX_ARGS} >> $GITHUB_OUTPUT
-          echo {tags}=${TAGS} >> $GITHUB_OUTPUT
+          echo buildx_args=${BUILDX_ARGS} >> $GITHUB_OUTPUT
+          echo tags=${TAGS} >> $GITHUB_OUTPUT
       -
         name: QEMU
         uses: docker/setup-qemu-action@v2
