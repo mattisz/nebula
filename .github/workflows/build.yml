@@ -43,7 +43,7 @@ jobs:
             echo VCS_REF=${GITHUB_SHA::8})
           BUILDX_ARGS="${BUILDX_ARGS//$'\n'/'%0A'}"
           echo buildx_args=${BUILDX_ARGS} >> $GITHUB_OUTPUT
-          echo tags${TAGS} >> $GITHUB_OUTPUT
+          echo tags=${TAGS} >> $GITHUB_OUTPUT
       -
         name: QEMU
         uses: docker/setup-qemu-action@v2
