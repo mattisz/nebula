@@ -208,7 +208,7 @@ port `80` from inside the container to be accessible from the host's IP on port
 * container version number
   * `docker inspect -f '{{ index .Config.Labels "build_version" }}' nebula`
 * image version number
-  * `docker inspect -f '{{ index .Config.Labels "build_version" }}' buildsociety/nebula`
+  * `docker inspect -f '{{ index .Config.Labels "build_version" }}' renehonig/nebula`
 
 ## Updating Info
 
