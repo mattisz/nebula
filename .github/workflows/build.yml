@@ -28,7 +28,7 @@ jobs:
           DOCKER_USERNAME=$(if [ -z "${{ secrets.DOCKER_USERNAME }}" ]; then echo renehonig; else echo ${{ secrets.DOCKER_USERNAME }}; fi)
           DOCKER_IMAGE=${{ github.repository }}
           DOCKER_PLATFORMS=linux/amd64,linux/386,linux/ppc64le,linux/arm/v6,linux/arm/v7,linux/arm64/v8
-          VERSION=$(curl --silent "https://api.github.com/repos/slackhq/nebula/releases/latest" | grep -Po '"tag_name": "\K.*?(?=")')
+          VERSION=$(curl --silent "https://api.github.com/repos/slackhq/nebula/releases/latest" | grep -o '"tag_name": "[^"]*' | grep -o '[^"]*$')
 
           TAGS="${DOCKER_IMAGE}:${VERSION}"
           TAGS="$TAGS,${DOCKER_IMAGE}:latest"
