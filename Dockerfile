@@ -1,4 +1,4 @@
-FROM --platform=${BUILDPLATFORM:-linux/amd64} golang:1.19-alpine as builder
+FROM --platform=${BUILDPLATFORM:-linux/amd64} golang:1.20-alpine as builder
 
 ARG VERSION
 
@@ -9,7 +9,7 @@ RUN printf "I am running on ${BUILDPLATFORM:-linux/amd64}, building for ${TARGET
         build-base \
         git \
     && rm -rf /tmp/* /var/cache/apk/* \
-    && git -c advice.detachedHead=false clone --branch ${VERSION} https://github.com/slackhq/nebula /go/src/github.com/slackhq/nebula \
+    && git -c advice.detachedHead=false clone --branch master https://github.com/slackhq/nebula /go/src/github.com/slackhq/nebula \
     && cd /go/src/github.com/slackhq/nebula \
     && make BUILD_NUMBER="${VERSION#v}" build/$(echo ${TARGETPLATFORM:-linux/amd64} | sed -e "s/\/v/-/g" -e "s/\//-/g")/nebula \
     && make BUILD_NUMBER="${VERSION#v}" build/$(echo ${TARGETPLATFORM:-linux/amd64} | sed -e "s/\/v/-/g" -e "s/\//-/g")/nebula-cert \
