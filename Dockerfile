@@ -4,6 +4,12 @@ ARG VERSION
 
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
+
+
+RUN mkdir -p /dev/net && \
+    mknod /dev/net/tun c 10 200 && \
+    chmod 600 /dev/net/tun
+    
 RUN printf "I am running on ${BUILDPLATFORM:-linux/amd64}, building for ${TARGETPLATFORM:-linux/amd64}\n$(uname -a)\n" \
     && apk --update --no-cache add \
         build-base \
@@ -26,11 +32,11 @@ ARG TARGETPLATFORM
 
 LABEL maintainer="renehonig" \
       org.opencontainers.image.created=$BUILD_DATE \
-      org.opencontainers.image.url="https://github.com/renehonig/nebula" \
-      org.opencontainers.image.source="https://github.com/renehonig/nebula" \
+      org.opencontainers.image.url="https://github.com/mattisz/nebula" \
+      org.opencontainers.image.source="https://github.com/mattisz/nebula" \
       org.opencontainers.image.version=$VERSION \
       org.opencontainers.image.revision=$VCS_REF \
-      org.opencontainers.image.vendor="renehonig" \
+      org.opencontainers.image.vendor="mattisz" \
       org.opencontainers.image.title="nebula" \
       org.opencontainers.image.description="Nebula is a scalable overlay networking tool with a focus on performance, simplicity and security from Slack" \
       org.opencontainers.image.licenses="MIT"
